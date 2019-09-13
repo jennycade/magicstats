@@ -7,11 +7,11 @@ import { AntDesign, Entypo } from '@expo/vector-icons'
 const LifeCounter = (props) => {
   return(
     <View style={[styles.lifeCounter]}>
-      <TouchableOpacity onPress={props.decFunc}>
+      <TouchableOpacity style={styles.iconButtonContainer} onPress={props.decFunc}>
         <AntDesign style={styles.iconButton} name='minuscircleo' />
       </TouchableOpacity>
       <Text style={styles.lifeText}>{props.life}</Text>{/* add ability to pull up roller for changing life here */}
-      <TouchableOpacity onPress={props.incFunc}>
+      <TouchableOpacity style={styles.iconButtonContainer} onPress={props.incFunc}>
         <AntDesign style={styles.iconButton} name='pluscircleo' />
       </TouchableOpacity>
     </View>
@@ -24,16 +24,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  iconButtonContainer: {
+    flex: 1,
+    alignSelf: 'center',
+  },
   iconButton: {
-    fontSize: 20,
-    flex: 1, // doesn't seem to do anything
-    alignSelf: 'center', // doesn't do anything
-    backgroundColor: 'green',
+    fontSize: 50,
   },
   lifeText: {
     fontSize: 50,
     flex: 4,
-    backgroundColor: 'red',
     textAlign: 'center',
   }
 })
