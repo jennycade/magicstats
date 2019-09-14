@@ -39,6 +39,7 @@ const LifeCounterScreen = () => {
         player='p2'
         decFunc={() => {setp2life(p2life - 1)}}
         incFunc={() => {setp2life(p2life + 1)}}
+        changeLife={(itemValue, itemIndex) => {setp2life(itemValue)}}
         life={p2life}
       />
 
@@ -52,6 +53,7 @@ const LifeCounterScreen = () => {
         player='p1'
         decFunc={() => {setp1life(p1life - 1)}}
         incFunc={() => {setp1life(p1life + 1)}}
+        changeLife={(itemValue, itemIndex) => {setp1life(itemValue)}}
         life={p1life}
       />
     </View>
@@ -66,7 +68,7 @@ const styles = StyleSheet.create({
     // flex: 1, // makes it disappear, why?
     flexDirection: 'row',
     justifyContent: 'space-around',
-    
+
   },
   turnArrow: {
     fontSize: 20,
